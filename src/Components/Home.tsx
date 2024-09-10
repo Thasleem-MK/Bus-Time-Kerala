@@ -5,13 +5,35 @@ export type AdItem = {
   type: "image" | "video";
   src: string;
   alt?: string;
+  company?: string;
 };
 
 // Mock data for ads (in a real app, this would come from an API or props)
 const adData: AdItem[] = [
-  { type: "image", src: "/placeholder.svg?height=200&width=400", alt: "Ad 1" },
-  { type: "video", src: "https://example.com/ad-video.mp4" },
-  { type: "image", src: "/placeholder.svg?height=200&width=400", alt: "Ad 2" },
+  {
+    type: "image",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlHEO7oUV7gFvVQRr540iNAgl2hJfQLQYr5w&s",
+    alt: "Ad 1",
+    company: "Cococola 1",
+  },
+  {
+    type: "image",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLpCwRGFdZfuwUygIdld0nTGEPRZA1BSkETQ&s",
+    alt: "Ad 2",
+    company: "Cococola 2",
+  },
+  {
+    type: "image",
+    src: "https://i.ytimg.com/vi/u3GzuZJjBk0/maxresdefault.jpg",
+    alt: "Ad 3",
+    company: "Cococola 3",
+  },
+  {
+    type: "image",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3xC6y9gwSwMacPF2J98vcPddgIG7BpRHxDA&s",
+    alt: "Ad 2",
+    company: "Cococola 4",
+  },
 ];
 
 const Home = () => {
@@ -19,15 +41,10 @@ const Home = () => {
   const [destination, setDestination] = useState("");
   const currentAdIndex = useCarousel(adData);
 
-   const handleSearch = () => {
-     // Implement search functionality here
-     console.log(
-       "Searching for route from",
-       currentLocation,
-       "to",
-       destination
-     );
-   };
+  const handleSearch = () => {
+    // Implement search functionality here
+    console.log("Searching for route from", currentLocation, "to", destination);
+  };
   return (
     <div className="min-h-screen bg-gray-100 p-4 flex flex-col">
       <h1 className="text-2xl font-bold mb-4">Bus Time App</h1>
@@ -57,7 +74,7 @@ const Home = () => {
 
       <div className="bg-white rounded-lg shadow-md overflow-hidden">
         <h2 className="text-lg font-semibold p-2 bg-gray-200">
-          Advertisements
+         {adData[currentAdIndex].company}
         </h2>
         <div className="relative h-[200px]">
           {adData[currentAdIndex].type === "image" ? (
