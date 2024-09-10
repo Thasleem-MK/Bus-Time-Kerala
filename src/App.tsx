@@ -1,7 +1,16 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import Home from "./Components/Home";
 
 function App() {
-  return <div>This is the Sample Application</div>;
+  return (
+    <div>
+      <Routes>
+        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/sample" element={<Home />} />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
