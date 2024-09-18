@@ -46,7 +46,7 @@ const Home = () => {
     console.log("Searching for route from", currentLocation, "to", destination);
   };
   return (
-    <div className="min-h-screen bg-gray-100 p-4 flex flex-col">
+    <div className="h-screen bg-gray-100 p-4 flex flex-col">
       <h1 className="text-2xl font-bold mb-4">Bus Time App</h1>
 
       <div className="space-y-4 mb-6">
@@ -72,16 +72,16 @@ const Home = () => {
         </button>
       </div>
 
-      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="flex-grow bg-white rounded-lg shadow-md overflow-hidden mt-3 flex flex-col">
         <h2 className="text-lg font-semibold p-2 bg-gray-200">
-         {adData[currentAdIndex].company}
+          {adData[currentAdIndex].company}
         </h2>
-        <div className="relative h-[200px]">
+        <div className="relative flex flex-col h-full">
           {adData[currentAdIndex].type === "image" ? (
             <img
               src={adData[currentAdIndex].src}
               alt={adData[currentAdIndex].alt}
-              className="w-full h-full object-cover"
+              className="object-cover w-full h-full"
             />
           ) : (
             <video
