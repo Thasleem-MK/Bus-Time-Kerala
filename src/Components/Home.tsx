@@ -201,7 +201,7 @@ export default function BusTimeApp() {
 
       <div className="relative z-20 flex flex-col">
         <Card
-          className="mx-auto mt-24 mb-14 max-w-3xl backdrop-blur-sm bg-white/80"
+          className="mx-auto mt-24 mb-14 max-w-3xl min-w-full backdrop-blur-sm bg-white/80"
           style={{ border: "2px solid #0A0A0A", borderRadius: "10px" }}
         >
           <CardHeader
@@ -210,7 +210,7 @@ export default function BusTimeApp() {
           />
           <CardContent>
             <div className="space-y-4">
-              <div className="space-y-2 flex justify-evenly">
+              <div className="space-y-2 flex flex-col px-2">
                 <Input
                   type="text"
                   placeholder="Current Location"
