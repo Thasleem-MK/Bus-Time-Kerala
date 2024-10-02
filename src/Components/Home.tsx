@@ -201,7 +201,7 @@ export default function BusTimeApp() {
 
       <div className="relative z-20 flex flex-col">
         <Card
-          className="mx-auto mt-16 mb-12 max-w-3xl min-w-full backdrop-blur-sm bg-white/80"
+          className="mx-auto mt-1 mb-12 max-w-3xl min-w-full backdrop-blur-sm bg-white/80"
           style={{ border: "2px solid #0A0A0A", borderRadius: "10px" }}
         >
           <CardHeader
